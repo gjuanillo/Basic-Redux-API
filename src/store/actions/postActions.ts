@@ -12,7 +12,7 @@ export const fetchPostFailure = (error) => ({
     payload: error,
 });
 
-export const fetchPosts = () => async (dispatch) {
+export const fetchPosts = () => async (dispatch) => {
     dispatch(fetchPostRequest());
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/posts');
