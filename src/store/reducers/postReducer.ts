@@ -1,11 +1,12 @@
+import type { PostAction, PostState } from "../../types/types";
 
-const initialState = {
+const initialState: PostState = {
     posts: [],
     loading: false,
     error: null
 }
 
-export const postReducer = (state = initialState, action) => {
+export const postReducer = (state = initialState, action: PostAction) => {
     switch (action.type) {
         case "FETCH_POST_REQUEST":
             return {

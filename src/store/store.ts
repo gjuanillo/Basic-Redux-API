@@ -1,7 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { postReducer } from "./reducers/postReducer";
+import type { PostState } from "../types/types";
 
-const initialState = {
+export interface RootState {
+    posts: PostState;
+}
+
+const initialState: RootState = {
     posts: {
         posts: [],
         loading: false,
@@ -15,3 +20,6 @@ export const store = configureStore({
     },
     preloadedState: initialState,
 });
+
+export type AppDispatch = typeof store.dispatch;
+export type AppState = ReturnType<typeof store.getState>;
